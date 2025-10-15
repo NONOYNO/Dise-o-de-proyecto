@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Unidad Educativa Fiscomisional San Lorenzo</title>
+    <style>
+        /* Tipografías y colores base */
+        :root {
+            --bg: #0f172a;             /* azul muy oscuro */
+            --bg-accent: #111827;      /* gris-azul */
+            --card: #1f2937;           /* gris oscuro */
+            --text: #e5e7eb;           /* gris claro */
+            --muted: #9ca3af;          /* gris medio */
+            --primary: #60a5fa;        /* azul claro */
+            --primary-strong: #3b82f6; /* azul */
+            --ring: rgba(96, 165, 250, .35);
+        }
+
+        * { box-sizing: border-box; }
+        html, body { height: 100%; }
+        body {
+            margin: 0;
+            font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+            color: var(--text);
+            background:
+                radial-gradient(1200px 600px at 80% -10%, rgba(37, 99, 235, .25), transparent 60%),
+                radial-gradient(800px 400px at -10% 20%, rgba(139, 92, 246, .18), transparent 60%),
+                linear-gradient(180deg, #0b1220, var(--bg));
+            display: grid;
+            place-items: center;
+            padding: 32px;
+        }
+
+        .shell {
+            width: min(1100px, 100%);
+            background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+            border: 1px solid rgba(255, 255, 255, .08);
+            border-radius: 18px;
+            box-shadow: 0 20px 40px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.03);
+            padding: 28px;
+        }
+
+        .row {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 24px;
+        }
+
+        @media (max-width: 900px) {
+            .row { grid-template-columns: 1fr; }
+        }
+
+        .hero {
+            background: linear-gradient(180deg, rgba(17,24,39,.75), rgba(17,24,39,.35));
+            border: 1px solid rgba(255,255,255,.06);
+            border-radius: 16px;
+            padding: 36px;
+            min-height: 320px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 18px;
+        }
+
+        .title {
+            font-size: clamp(28px, 4.2vw, 44px);
+            line-height: 1.1;
+            margin: 0;
+            letter-spacing: .2px;
+        }
+
+        .lead { color: var(--muted); margin: 0; font-size: clamp(15px, 1.8vw, 18px); }
+
+        .actions { display: flex; gap: 12px; margin-top: 6px; }
+
+        .btn {
+            appearance: none;
+            border: none;
+            background: linear-gradient(180deg, var(--primary), var(--primary-strong));
+            color: white;
+            padding: 12px 18px;
+            border-radius: 12px;
+            font-weight: 600;
+            letter-spacing: .2px;
+            cursor: pointer;
+            text-decoration: none;
+            box-shadow: 0 10px 24px rgba(59,130,246,.25);
+            transition: transform .15s ease, box-shadow .2s ease, filter .15s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .btn:hover { transform: translateY(-1px); filter: brightness(1.03); box-shadow: 0 12px 28px rgba(59,130,246,.32); }
+        .btn:focus { outline: 3px solid var(--ring); outline-offset: 2px; }
+
+        .card-media {
+            background: linear-gradient(180deg, rgba(31,41,55,.8), rgba(31,41,55,.5));
+            border: 1px solid rgba(255,255,255,.06);
+            border-radius: 16px;
+            padding: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .figure {
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,.08);
+            background: #0b1220;
+            object-fit: contain;   /* asegura que el logo no se deforme */
+            object-position: center;
+            display: block;
+        }
+
+        .footer {
+            margin-top: 18px;
+            font-size: 13px;
+            color: var(--muted);
+            text-align: center;
+        }
+
+        /* Enlace secundario */
+        .text-link {
+            color: var(--primary);
+            text-decoration: none;
+        }
+        .text-link:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <main class="shell" role="main">
+        <div class="row">
+            <section class="hero">
+                <h1 class="title">Unidad Educativa Fiscomisional San Lorenzo</h1>
+                <p class="lead">Aprender hoy construye los logros de mañana. Cada lectura, cada intento y cada pregunta abren nuevas puertas. La constancia convierte los sueños en metas alcanzables.</p>
+                <div class="actions">
+                    <a class="btn" href="https://www.wikipedia.org/" target="_blank" rel="noopener noreferrer">
+                        Conocer más
+                        <span aria-hidden>↗</span>
+                    </a>
+                    <a class="text-link" href="#creditos">Ver créditos</a>
+                </div>
+            </section>
+
+            <aside class="card-media" aria-label="Imagen destacada">
+                <img
+                    class="figure"
+                    alt="Logo Unidad Educativa Fiscomisional San Lorenzo"
+                    src="logo unidad educativa.png"
+                    loading="lazy" />
+            </aside>
+        </div>
+
+        <p id="creditos" class="footer">hecho con dedicacion para inspirar a nuestra comunidad educativa</p>
+    </main>
+</body>
+</html>
+
